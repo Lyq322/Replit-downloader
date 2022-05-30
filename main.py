@@ -14,10 +14,10 @@ headers = {
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
     "origin": "https://replit.com",
-    "referer": "https://replit.com/repls/folder/Archive/CC31A%3A%20USACO%20Silver%20Basic%20A",
-    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36",
+    "referer": "https://replit.com/~",
+    "user-agent": "your-user-agent",
     "x-requested-with": "XMLHttpRequest",
-    "cookie": '''__stripe_mid=0499a761-2a5c-4baf-8c46-fea493f2c3102b1736; cf_clearance=30b58abae04c6ec1992c74d602235da500e896e5-1629129844-0-150; hubspotutk=61f4a1e92e3babc8952023b474af8450; __hssrc=1; _ga=GA1.2.1142902446.1648509807; ajs_user_id=196205; _anon_id=80a1defe-c469-456b-9741-f36d4329e127; connect.sid=s%3AnxTPECfenOzRKGHZKuKQmx6lF0AeP_gs.kn%2BO%2B4whSGrI4mgFjSkiYiLLIRmW8uT95TJlHy%2BfGBI; __hstc=205638156.61f4a1e92e3babc8952023b474af8450.1633810748592.1650208156552.1652571886968.16; replit:authed=1; replit_authed=1; _gid=GA1.2.591970461.1653753464; __stripe_sid=a4486bc8-9154-48c4-9c31-317e3436be1390665b; amplitudeSessionId=1653791389; ajs_anonymous_id=c5eaf6c1-13a0-4f7a-aaa5-45e7cf9393b0; replit_ng=1653792859.325.46.818813|8035451343a2d8f3e54599c71b2aec19; _dd_s=logs=1&id=49b1674e-7659-46c9-9833-a7b5026664fc&created=1653789336704&expire=1653793932445&rum=1''',
+    "cookie": '''your-cookie''',
 }
 
 s = requests.Session()
@@ -105,4 +105,4 @@ def get_multiplayer_files():
 
 
 get_files("")
-#get_multiplayer_files()
+get_multiplayer_files()
