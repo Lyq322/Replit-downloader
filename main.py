@@ -1,4 +1,4 @@
-import requests, json, os
+import requests, json, os, sys
 
 url = "https://replit.com/graphql"
 
@@ -15,9 +15,9 @@ headers = {
     "sec-fetch-site": "same-origin",
     "origin": "https://replit.com",
     "referer": "https://replit.com/~",
-    "user-agent": "your-user-agent",
+    "user-agent": '''your-user-agent''',
     "x-requested-with": "XMLHttpRequest",
-    "cookie": '''your-cookie''',
+    "cookie": '''your-cookie'''
 }
 
 s = requests.Session()
@@ -41,7 +41,6 @@ def get_files(path):
 
     r = s.post(url=url, headers=headers, json=json.loads(payload.replace("\n", "")))
     arr = r.json()
-    print(path)
     print(r.status_code)
 
     folders = arr[0]['data']['currentUser']['replFolderByPath']['folders']
@@ -62,7 +61,6 @@ def get_files(path):
         except:
             pass
 
-        print(path + '/' + folder['name'])
         get_files(path + '/' + folder['name'])
 
     for repl in repls:
@@ -98,11 +96,15 @@ def get_multiplayer_files():
         repl_name = repl['title'].replace(' ', '-')
 
         r = s.get(url=download_link, headers=headers)
-        #print(repl_name, r.status_code)
+        print(r.status_code)
 
         f = open("./Files/Multiplayer/" + repl_name + ".zip", "wb+")
         f.write(r.content)
 
+
+args = sys.argv
+headers['cookie'] = args[1]
+headers['user-agent'] = args[2]
 
 get_files("")
 get_multiplayer_files()
