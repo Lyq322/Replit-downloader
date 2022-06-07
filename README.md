@@ -1,8 +1,6 @@
 # Replit downloader
 
-Includes: 
-- How to find your cookie and user-agent
-- How to run program
+Downloads all replits from your account.
 
 ## How to Find Your Cookie and User-agent
 1. Log into your replit account
